@@ -518,6 +518,7 @@ MASK_RX_DR	source_files\drv_periph\inc\drv_rf24l01.h	123;"	macro
 MASK_TX_DS	source_files\drv_periph\inc\drv_rf24l01.h	124;"	macro
 MAX_RT	source_files\drv_periph\inc\drv_rf24l01.h	171;"	macro
 MAX_TX	source_files\drv_periph\inc\drv_rf24l01.h	97;"	macro
+MAX_WAVEINDEX	main.c	21;"	macro	file:
 MEMCPY	source_files\std_lib\inc\stm8l10x.h	66;"	macro
 MODE_RX	source_files\drv_periph\inc\drv_rf24l01.h	53;"	enumerator	enum:ModeType
 MODE_TX	source_files\drv_periph\inc\drv_rf24l01.h	52;"	enumerator	enum:ModeType
@@ -534,7 +535,7 @@ NRF24L01_Flush_Rx_Fifo	source_files\drv_periph\src\drv_rf24l01.c	130;"	function	
 NRF24L01_Flush_Tx_Fifo	source_files\drv_periph\inc\drv_rf24l01.h	202;"	prototype	signature:( void )
 NRF24L01_Flush_Tx_Fifo	source_files\drv_periph\src\drv_rf24l01.c	115;"	function	signature:( void )
 NRF24L01_Gpio_Init	source_files\drv_periph\inc\drv_rf24l01.h	223;"	prototype	signature:( void )
-NRF24L01_Gpio_Init	source_files\drv_periph\src\drv_rf24l01.c	608;"	function	signature:( void )
+NRF24L01_Gpio_Init	source_files\drv_periph\src\drv_rf24l01.c	609;"	function	signature:( void )
 NRF24L01_Nop	source_files\drv_periph\inc\drv_rf24l01.h	205;"	prototype	signature:( void )
 NRF24L01_Nop	source_files\drv_periph\src\drv_rf24l01.c	160;"	function	signature:( void )
 NRF24L01_Read_Buf	source_files\drv_periph\inc\drv_rf24l01.h	199;"	prototype	signature:( uint8_t RegAddr, uint8_t *pBuf, uint8_t len )
@@ -625,7 +626,7 @@ RF24L01_GET_IRQ_STATUS	source_files\drv_periph\inc\drv_rf24l01.h	47;"	macro
 RF24L01_IRQ_GPIO_PIN	source_files\drv_periph\inc\drv_rf24l01.h	35;"	macro
 RF24L01_IRQ_GPIO_PORT	source_files\drv_periph\inc\drv_rf24l01.h	34;"	macro
 RF24L01_Init	source_files\drv_periph\inc\drv_rf24l01.h	224;"	prototype	signature:( void )
-RF24L01_Init	source_files\drv_periph\src\drv_rf24l01.c	624;"	function	signature:( void )
+RF24L01_Init	source_files\drv_periph\src\drv_rf24l01.c	625;"	function	signature:( void )
 RF24L01_Read_IRQ_Status	source_files\drv_periph\inc\drv_rf24l01.h	208;"	prototype	signature:( void )
 RF24L01_Read_IRQ_Status	source_files\drv_periph\src\drv_rf24l01.c	216;"	function	signature:( void )
 RF24L01_SET_CE_HIGH	source_files\drv_periph\inc\drv_rf24l01.h	41;"	macro
@@ -678,6 +679,7 @@ S8_MIN	source_files\std_lib\inc\stm8l10x.h	162;"	macro
 SET	source_files\std_lib\inc\stm8l10x.h	153;"	enumerator	enum:__anon4
 SETUP_AW	source_files\drv_periph\inc\drv_rf24l01.h	91;"	macro
 SETUP_RETR	source_files\drv_periph\inc\drv_rf24l01.h	92;"	macro
+SINWAVE	main.c	23;"	variable
 SMCR	source_files\std_lib\inc\stm8l10x.h	1078;"	member	struct:TIM4_struct
 SMCR	source_files\std_lib\inc\stm8l10x.h	904;"	member	struct:TIM_struct
 SPEED_1M	source_files\drv_periph\inc\drv_rf24l01.h	59;"	enumerator	enum:SpeedType
@@ -941,6 +943,7 @@ TX_FULL_0	source_files\drv_periph\inc\drv_rf24l01.h	173;"	macro
 TX_FULL_1	source_files\drv_periph\inc\drv_rf24l01.h	178;"	macro
 TX_MODE_1	source_files\app\inc\main.h	37;"	enumerator	enum:__anon1
 TX_MODE_2	source_files\app\inc\main.h	38;"	enumerator	enum:__anon1
+TX_NODE	main.c	20;"	macro	file:
 TX_OK	source_files\drv_periph\inc\drv_rf24l01.h	98;"	macro
 TX_REUSE	source_files\drv_periph\inc\drv_rf24l01.h	177;"	macro
 U16_MAX	source_files\std_lib\inc\stm8l10x.h	163;"	macro
@@ -1114,7 +1117,7 @@ __DRV_UART_H__	source_files\drv_mcu\inc\drv_uart.h	18;"	macro
 __I	source_files\std_lib\inc\stm8l10x.h	126;"	macro
 __IO	source_files\std_lib\inc\stm8l10x.h	128;"	macro
 __MAIN_H__	source_files\app\inc\main.h	19;"	macro
-__MODS0__	..\..\..\..\..\..\..\prog\cosmic\cxstm8_32k\hstm8\mods0.h	11;"	macro
+__MODS0__	..\..\..\..\..\..\prog\cosmic\cxstm8_32k\hstm8\mods0.h	11;"	macro
 __O	source_files\std_lib\inc\stm8l10x.h	127;"	macro
 __RF24L01_TX_TEST__	source_files\app\inc\main.h	30;"	macro
 __STM8L10X_CLK_H	source_files\std_lib\inc\stm8l10x_clk.h	31;"	macro
@@ -1170,15 +1173,16 @@ drv_uart_tx_bytes	source_files\drv_mcu\src\drv_uart.c	49;"	function	signature:( 
 enableInterrupts	source_files\std_lib\inc\stm8l10x.h	1313;"	macro
 enableInterrupts	source_files\std_lib\inc\stm8l10x.h	1323;"	macro
 enableInterrupts	source_files\std_lib\inc\stm8l10x.h	1334;"	macro
-g_Ashining	main.c	21;"	variable
+g_Ashining	main.c	45;"	variable
 g_ErrorString	source_files\drv_periph\src\drv_rf24l01.c	22;"	variable
-g_RF24L01RxBuffer	main.c	24;"	variable
-g_TxMode	main.c	22;"	variable
-g_UartRxBuffer	main.c	23;"	variable
-g_UartRxFlag	main.c	22;"	variable
+g_RF24L01RxBuffer	main.c	48;"	variable
+g_TxMode	main.c	46;"	variable
+g_UartRxBuffer	main.c	47;"	variable
+g_UartRxFlag	main.c	46;"	variable
 halt	source_files\std_lib\inc\stm8l10x.h	1321;"	macro
 halt	source_files\std_lib\inc\stm8l10x.h	1331;"	macro
 halt	source_files\std_lib\inc\stm8l10x.h	1342;"	macro
+iWave	main.c	41;"	variable
 int16_t	source_files\std_lib\inc\stm8l10x.h	132;"	typedef
 int32_t	source_files\std_lib\inc\stm8l10x.h	133;"	typedef
 int8_t	source_files\std_lib\inc\stm8l10x.h	131;"	typedef
@@ -1192,7 +1196,7 @@ led_green_on	source_files\drv_mcu\inc\drv_led.h	50;"	macro
 led_red_flashing	source_files\drv_mcu\inc\drv_led.h	48;"	macro
 led_red_off	source_files\drv_mcu\inc\drv_led.h	47;"	macro
 led_red_on	source_files\drv_mcu\inc\drv_led.h	46;"	macro
-main	main.c	34;"	function	signature:( void )
+main	main.c	58;"	function	signature:( void )
 nRf24l01ModeType	source_files\drv_periph\inc\drv_rf24l01.h	54;"	typedef	typeref:enum:ModeType
 nRf24l01PowerType	source_files\drv_periph\inc\drv_rf24l01.h	69;"	typedef	typeref:enum:PowerType
 nRf24l01SpeedType	source_files\drv_periph\inc\drv_rf24l01.h	61;"	typedef	typeref:enum:SpeedType
@@ -1218,6 +1222,7 @@ spi_set_nss_low	source_files\drv_mcu\inc\drv_spi.h	44;"	macro
 trap	source_files\std_lib\inc\stm8l10x.h	1318;"	macro
 trap	source_files\std_lib\inc\stm8l10x.h	1328;"	macro
 trap	source_files\std_lib\inc\stm8l10x.h	1339;"	macro
+tx	main.c	43;"	variable
 u16	source_files\std_lib\inc\stm8l10x.h	147;"	typedef
 u32	source_files\std_lib\inc\stm8l10x.h	146;"	typedef
 u8	source_files\std_lib\inc\stm8l10x.h	148;"	typedef

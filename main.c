@@ -17,6 +17,7 @@
 
 #include "main.h"
 
+#define TX_NODE 2
 #define MAX_WAVEINDEX 255
 // 最大值:255  最小值:0
 const unsigned char  SINWAVE[] = {
@@ -39,7 +40,7 @@ const unsigned char  SINWAVE[] = {
 };
 unsigned char iWave;
 //                     ID    Data
-unsigned char tx[2] = {0x01, 0x00};
+unsigned char tx[2] = {TX_NODE, 0x00};
 
 const char *g_Ashining = "ashining";
 uint8_t g_TxMode = 0, g_UartRxFlag = 0;
@@ -125,7 +126,12 @@ void main( void )
 		//发送
 		if( TX_MODE_1 == g_TxMode )
 		{
+#if TX_NODE == 1
             tx[1] = SINWAVE[iWave++];
+#endif
+#if TX_NODE == 2
+            tx[1] = iWave++;
+#endif
 			NRF24L01_TxPacket( (uint8_t *)(&tx[0]), 2 );		//模式1发送固定字符,1S一包
 			drv_delay_ms( 100 );		
 			led_red_flashing( );			
@@ -156,8 +162,10 @@ void main( void )
 	{
 		NRF24L01_RxPacket( g_RF24L01RxBuffer );		//接收字节
 		i = NRF24L01_Read_Reg( R_RX_PL_WID );		//接收字节个数
-		if( 0 != i )
+		if( 2 == i )
 		{
+            i = 3;
+            g_RF24L01RxBuffer[2] = g_RF24L01RxBuffer[0] + g_RF24L01RxBuffer[1];
 			led_green_flashing( );
 			drv_uart_tx_bytes( g_RF24L01RxBuffer,i );	//输出接收到的字节
 			
